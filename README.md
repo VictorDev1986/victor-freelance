@@ -1,59 +1,81 @@
-# Shadcn/UI Landing Page Template
+# Victor Freelance Portfolio
 
-## <a href="https://ui.shadcn.com/" target="_blank">ShadcnUI</a> + <a href="https://react.dev/" target="_blank">React</a> + <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> + <a href="https://tailwindcss.com/" target="_blank">Tailwind</a>.
+Landing page profesional para servicios freelance de desarrollo web. Construida con React, TypeScript, Tailwind CSS y componentes modernos.
 
-![shadch-landing-page](https://github.com/leoMirandaa/shadcn-landing-page/assets/61714687/3ba7b51f-9589-4541-800a-5ab7cecad1b5)
+## 🚀 Características
 
-Build your React landing page effortlessly with the required sections to your project. <a href="https://shadcn-landing-page.vercel.app/" target="_blank">Live Demo</a>
+- ✨ Diseño moderno y responsive
+- 🌙 Modo oscuro/claro
+- 📱 Mobile-first design
+- 🎨 Animaciones con Framer Motion
+- 🔧 Componentes reutilizables con shadcn/ui
+- 📊 Roadmap de desarrollo interactivo
+- 💼 Sección de portafolio
+- 📝 Formulario de contacto
 
-## Sections
+## 🛠️ Tecnologías
 
-- [x] Navbar
-- [x] Sidebar(mobile)
-- [x] Hero
-- [x] Sponsors
-- [x] About
-- [x] Stats
-- [x] How It Works
-- [x] Features
-- [x] Services
-- [x] Call-to-Action (CTA)
-- [x] Testimonials
-- [x] Team
-- [x] Pricing
-- [x] Newsletter
-- [x] Frequently Asked Questions(FAQ)
-- [x] Footer
+- **React 18** - Framework principal
+- **TypeScript** - Tipado estático
+- **Vite** - Build tool y dev server
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animaciones
+- **shadcn/ui** - Componentes UI
+- **Lucide Icons** - Iconografía
 
-## Features
+## 🎯 Secciones
 
-- [x] Fully Responsive Design
-- [x] User Friendly Navigation
-- [x] Dark Mode
-- [x] Meta tags
+1. **Hero** - Presentación principal
+2. **About** - Información personal
+3. **Services** - Servicios ofrecidos
+4. **Features** - Características destacadas
+5. **Roadmap** - Proceso de desarrollo
+6. **Portfolio** - Proyectos realizados
+7. **Testimonials** - Reseñas de clientes
+8. **Pricing** - Planes y precios
+9. **FAQ** - Preguntas frecuentes
+10. **Contact** - Formulario de contacto
 
-## How to install
-
-1. Clone this repository:
-
-```bash
-git clone https://github.com/leoMirandaa/shadcn-landing-page.git
-```
-
-2. Go into project
+## 🚦 Instalación
 
 ```bash
-cd shadcn-landing-page
-```
+# Clonar el repositorio
+git clone https://github.com/TU_USUARIO/victor-freelance-portfolio.git
 
-3. Install dependencies
+# Navegar al directorio
+cd victor-freelance-portfolio
 
-```bash
+# Instalar dependencias
 npm install
-```
 
-4. Run project
-
-```bash
+# Ejecutar en modo desarrollo
 npm run dev
 ```
+
+## 📦 Scripts Disponibles
+
+```bash
+npm run dev      # Modo desarrollo
+npm run build    # Build para producción
+npm run preview  # Preview del build
+npm run lint     # Linter ESLint
+```
+
+## 🎨 Personalización
+
+El proyecto está configurado con:
+- Variables CSS personalizadas para temas
+- Componentes modulares y reutilizables
+- Configuración de Tailwind extendida
+- Tipografía consistente en todo el proyecto
+
+## 📧 Contacto
+
+Para consultas sobre el proyecto o servicios freelance:
+- **Email**: tu-email@ejemplo.com
+- **LinkedIn**: tu-perfil-linkedin
+- **GitHub**: tu-usuario-github
+
+---
+
+⭐ Si te gusta este proyecto, no olvides darle una estrella en GitHub!
