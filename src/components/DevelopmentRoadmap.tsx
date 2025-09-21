@@ -115,10 +115,11 @@ export const DevelopmentRoadmap = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Roadmap de Desarrollo
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+              Roadmap de{" "}
             </span>
+            Desarrollo
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Proceso completo desde la planificación hasta el lanzamiento de tu proyecto web
