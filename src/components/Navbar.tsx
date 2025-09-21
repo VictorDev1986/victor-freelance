@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -14,9 +14,8 @@ import {
 
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "./ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Braces } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
-import { LogoIcon } from "./Icons";
 
 interface RouteProps {
   href: string;
@@ -25,27 +24,47 @@ interface RouteProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "#features",
-    label: "Features",
+    href: "#about",
+    label: "Acerca de mí",
   },
   {
-    href: "#testimonials",
-    label: "Testimonials",
+    href: "#services",
+    label: "Servicios",
+  },
+  {
+    href: "#projects",
+    label: "Proyectos",
   },
   {
     href: "#pricing",
-    label: "Pricing",
+    label: "Precios",
   },
   {
-    href: "#faq",
-    label: "FAQ",
+    href: "#contact",
+    label: "Contacto",
   },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50); // Reducido de 100 a 50 para que sea más rápido
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
+    <header className={`sticky border-b-[1px] top-0 z-40 w-full transition-all duration-500 ${
+      isScrolled 
+        ? 'bg-white/30 dark:bg-background/30 backdrop-blur-xl border-b-transparent shadow-lg' 
+        : 'bg-white dark:bg-background dark:border-b-slate-700 shadow-none'
+    }`}>
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
@@ -54,8 +73,8 @@ export const Navbar = () => {
               href="/"
               className="ml-2 font-bold text-xl flex"
             >
-              <LogoIcon />
-              ShadcnUI/React
+              <Braces className="mr-2 w-6 h-6" />
+              Victor Sanchez
             </a>
           </NavigationMenuItem>
 
@@ -79,7 +98,7 @@ export const Navbar = () => {
               <SheetContent side={"left"}>
                 <SheetHeader>
                   <SheetTitle className="font-bold text-xl">
-                    Shadcn/React
+                    Victor Sánchez
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
@@ -96,7 +115,7 @@ export const Navbar = () => {
                   ))}
                   <a
                     rel="noreferrer noopener"
-                    href="https://github.com/leoMirandaa/shadcn-landing-page.git"
+                    href="https://github.com/VictorDev1986"
                     target="_blank"
                     className={`w-[110px] border ${buttonVariants({
                       variant: "secondary",
@@ -129,7 +148,7 @@ export const Navbar = () => {
           <div className="hidden md:flex gap-2">
             <a
               rel="noreferrer noopener"
-              href="https://github.com/leoMirandaa/shadcn-landing-page.git"
+              href="https://github.com/VictorDev1986"
               target="_blank"
               className={`border ${buttonVariants({ variant: "secondary" })}`}
             >

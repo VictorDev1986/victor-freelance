@@ -1,40 +1,50 @@
 import { Statistics } from "./Statistics";
-import pilot from "../assets/pilot.png";
+import { TechSlider } from "./TechSlider";
+import fotoPerfil from "../assets/foto_perfil.jpg";
 
 export const About = () => {
   return (
-    <section
-      id="about"
-      className="container py-24 sm:py-32"
-    >
-      <div className="bg-muted/50 border rounded-lg py-12">
-        <div className="px-6 flex flex-col-reverse md:flex-row gap-8 md:gap-12">
-          <img
-            src={pilot}
-            alt=""
-            className="w-[300px] object-contain rounded-lg"
-          />
-          <div className="bg-green-0 flex flex-col justify-between">
-            <div className="pb-6">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-                  About{" "}
-                </span>
-                Company
-              </h2>
-              <p className="text-xl text-muted-foreground mt-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit.
-              </p>
-            </div>
+    <>
+      <section
+        id="about"
+        className="container py-20 sm:py-24 md:py-32"
+      >
+        <div className="bg-muted/50 border rounded-lg py-12">
+          <div className="px-6 flex flex-col-reverse md:flex-row gap-8 md:gap-12">
+            <img
+              src={fotoPerfil}
+              alt="Victor Sánchez - Ingeniero de Sistemas"
+              className="w-[300px] h-[300px] object-cover rounded-full mx-auto md:mx-0"
+            />
+            <div className="bg-green-0 flex flex-col justify-between">
+              <div className="pb-6">
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+                    Acerca de{" "}
+                  </span>
+                  Victor
+                </h2>
+                <p className="text-xl text-muted-foreground mt-4">
+                  Soy Ingeniero de Sistemas con 2 años de experiencia especializado en 
+                  desarrollo de software a la medida. Me enfoco en crear soluciones 
+                  tecnológicas innovadoras para empresas, PyMES y emprendedores, incluyendo 
+                  plataformas de e-commerce robustas y páginas web modernas que impulsan el 
+                  crecimiento de los negocios.
+                </p>
+                <p className="text-lg text-muted-foreground mt-3">
+                  Mi pasión por la tecnología me lleva a mantenerme actualizado con las 
+                  últimas tendencias en desarrollo web, integrando inteligencia artificial 
+                  y mejores prácticas para entregar productos de calidad excepcional.
+                </p>
+              </div>
 
-            <Statistics />
+              <Statistics />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      {/* Sección de tecnologías */}
+      <TechSlider />
+    </>
   );
 };

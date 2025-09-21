@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { MedalIcon, MapIcon, PlaneIcon, GiftIcon } from "../components/Icons";
+import { MedalIcon, MapIcon } from "../components/Icons";
+import { Globe, ShoppingCart, Settings, Palette } from "lucide-react";
 
 interface FeatureProps {
   icon: JSX.Element;
@@ -9,62 +10,76 @@ interface FeatureProps {
 
 const features: FeatureProps[] = [
   {
-    icon: <MedalIcon />,
-    title: "Accessibility",
+    icon: <Globe className="w-14 h-14 text-primary" />,
+    title: "Páginas Web & Landing Pages",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quas provident cum",
+      "Desarrollo sitios web modernos y landing pages optimizadas para conversión, con diseño responsive y carga rápida.",
+  },
+  {
+    icon: <ShoppingCart className="w-14 h-14 text-primary" />,
+    title: "E-commerce",
+    description:
+      "Tiendas online completas con pasarelas de pago, gestión de inventario y panel de administración.",
+  },
+  {
+    icon: <Settings className="w-14 h-14 text-primary" />,
+    title: "Software a la Medida",
+    description:
+      "Aplicaciones personalizadas que se adaptan exactamente a las necesidades específicas de tu negocio.",
+  },
+  {
+    icon: <Palette className="w-14 h-14 text-primary" />,
+    title: "Diseño Gráfico Web",
+    description:
+      "Diseño de interfaces atractivas y funcionales con herramientas como Figma, enfocadas en UX/UI.",
+  },
+  {
+    icon: <MedalIcon />,
+    title: "Soporte y Mantenimiento",
+    description:
+      "Mantenimiento continuo, actualizaciones de seguridad y soporte técnico para tu proyecto web.",
   },
   {
     icon: <MapIcon />,
-    title: "Community",
+    title: "Hosting y Dominios",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quas provident cum",
-  },
-  {
-    icon: <PlaneIcon />,
-    title: "Scalability",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quas provident cum",
-  },
-  {
-    icon: <GiftIcon />,
-    title: "Gamification",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quas provident cum",
+      "Gestión completa de hosting, configuración de dominios y optimización de servidores para máximo rendimiento.",
   },
 ];
 
 export const HowItWorks = () => {
   return (
     <section
-      id="howItWorks"
+      id="services"
       className="container text-center py-24 sm:py-32"
     >
       <h2 className="text-3xl md:text-4xl font-bold ">
-        How It{" "}
+        Mis{" "}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          Works{" "}
+          Servicios{" "}
         </span>
-        Step-by-Step Guide
+        Profesionales
       </h2>
       <p className="md:w-3/4 mx-auto mt-4 mb-8 text-xl text-muted-foreground">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-        dolor pariatur sit!
+        Soluciones tecnológicas completas para empresas, PyMES y emprendedores 
+        que buscan digitalizar y hacer crecer su negocio.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {features.map(({ icon, title, description }: FeatureProps) => (
           <Card
             key={title}
-            className="bg-muted/50"
+            className="bg-muted/50 hover:bg-muted/70 transition-colors duration-300"
           >
             <CardHeader>
-              <CardTitle className="grid gap-4 place-items-center">
+              <CardTitle className="grid gap-4 place-items-center text-center">
                 {icon}
-                {title}
+                <span className="text-lg">{title}</span>
               </CardTitle>
             </CardHeader>
-            <CardContent>{description}</CardContent>
+            <CardContent>
+              <p className="text-muted-foreground">{description}</p>
+            </CardContent>
           </Card>
         ))}
       </div>
