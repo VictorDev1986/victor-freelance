@@ -17,45 +17,45 @@ interface TestimonialProps {
 const testimonials: TestimonialProps[] = [
   {
     image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe",
-    comment: "This landing page is awesome!",
+    name: "María González",
+    userName: "Restaurante La Tradición",
+    comment: "Victor desarrolló nuestra página web en tiempo récord. Quedamos encantados con el diseño y la funcionalidad. Nuestras ventas online aumentaron un 40% desde que lanzamos el sitio. ¡Altamente recomendado! 🍽️✨",
   },
   {
     image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe1",
+    name: "Carlos Mendoza",
+    userName: "MendozaTech Solutions",
     comment:
-      "Lorem ipsum dolor sit amet,empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+      "Excelente trabajo en nuestra tienda online. Victor no solo cumplió con los tiempos, sino que nos asesoró en aspectos que no habíamos considerado. El sitio funciona perfectamente y el soporte post-entrega es excepcional.",
   },
 
   {
     image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe2",
+    name: "Ana Patricia Ruiz",
+    userName: "Boutique Elegancia",
     comment:
-      "Lorem ipsum dolor sit amet,exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "¡Increíble experiencia! Victor transformó nuestra idea en una hermosa página web. La capacitación que nos dio para administrar el contenido fue muy clara. Definitivamente volveremos a trabajar con él para futuros proyectos.",
   },
   {
     image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe3",
+    name: "Dr. Fernando López",
+    userName: "Clínica Dental Sonrisa",
     comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "Profesional, puntual y muy creativo. Desarrolló nuestro sitio web con sistema de citas online. Los pacientes pueden agendar fácilmente y nosotros gestionar todo desde el panel administrativo. ¡Excelente inversión!",
   },
   {
     image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe4",
+    name: "Sofía Herrera",
+    userName: "SH Consultorías",
     comment:
-      "Lorem ipsum dolor sit amet, tempor incididunt  aliqua. Ut enim ad minim veniam, quis nostrud.",
+      "Victor superó nuestras expectativas. El diseño responsive se ve increíble en móviles y la velocidad de carga es excelente. Además, nos incluyó SEO básico y ya aparecemos en las primeras posiciones de Google. 🚀",
   },
   {
     image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe5",
+    name: "Roberto Castro",
+    userName: "Castro Autopartes",
     comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Llevaba años posponiendo hacer mi sitio web. Victor me convenció con su propuesta y proceso claro. En una semana tenía mi landing page funcionando. El retorno de inversión se vio desde el primer mes. ¡Gracias!",
   },
 ];
 
@@ -66,17 +66,17 @@ export const Testimonials = () => {
       className="container py-24 sm:py-32"
     >
       <h2 className="text-3xl md:text-4xl font-bold">
-        Discover Why
+        Lo Que Dicen Mis
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           {" "}
-          People Love{" "}
+          Clientes{" "}
         </span>
-        This Landing Page
+        Satisfechos
       </h2>
 
       <p className="text-xl text-muted-foreground pt-4 pb-8">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non unde error
-        facere hic reiciendis illo
+        Testimonios reales de empresarios y profesionales que confiaron en mis servicios 
+        para desarrollar sus proyectos web y transformar sus negocios digitalmente.
       </p>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 sm:block columns-2  lg:columns-3 lg:gap-6 mx-auto space-y-4 lg:space-y-6">

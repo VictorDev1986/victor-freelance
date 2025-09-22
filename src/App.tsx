@@ -1,45 +1,32 @@
-import { About } from "./components/About";
-import { Cta } from "./components/Cta";
-import { DevelopmentRoadmap } from "./components/DevelopmentRoadmap";
-import { FAQ } from "./components/FAQ";
-import { Footer } from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { GlobalBackground } from "./components/GlobalBackground";
-import { Hero } from "./components/Hero";
-import { HowItWorks } from "./components/HowItWorks";
-import { Navbar } from "./components/Navbar";
-import { Newsletter } from "./components/Newsletter";
-import PortfolioSection from "./components/PortfolioSection";
-import { Pricing } from "./components/Pricing";
 import { ScrollToTop } from "./components/ScrollToTop";
-import { Services } from "./components/Services";
-import { Team } from "./components/Team";
-import { Testimonials } from "./components/Testimonials";
+import Home from "./pages/Home.tsx";
+import LandingPageService from "./pages/LandingPageService";
+import EcommerceService from "./pages/EcommerceService";
+import PaginaWebService from "./pages/PaginaWebService";
+import SoftwareMedidaService from "./pages/SoftwareMedidaService";
 import "./App.css";
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-background">
-      <GlobalBackground />
-      
-      {/* Contenido principal */}
-      <div className="relative z-10">
-        <Navbar />
-        <Hero />
-        <About />
-        <HowItWorks />
-         <DevelopmentRoadmap />
-        <PortfolioSection />
-        <Services />
-        <Cta />
-        <Testimonials />
-        <Team />
-        <Pricing />
-        <Newsletter />
-        <FAQ />
-        <Footer />
-        <ScrollToTop />
+    <Router>
+      <div className="relative min-h-screen bg-background">
+        <GlobalBackground />
+        
+        {/* Contenido principal */}
+        <div className="relative z-10">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/servicios/landing-page" element={<LandingPageService />} />
+            <Route path="/servicios/ecommerce" element={<EcommerceService />} />
+            <Route path="/servicios/pagina-web" element={<PaginaWebService />} />
+            <Route path="/servicios/software-medida" element={<SoftwareMedidaService />} />
+          </Routes>
+          <ScrollToTop />
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 

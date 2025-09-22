@@ -209,8 +209,8 @@ const PortfolioSection = () => {
           </p>
         </motion.div>
 
-        {/* Grid Layout Uniforme - 2 columnas en desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Grid Layout Uniforme - 3 columnas en desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.id}

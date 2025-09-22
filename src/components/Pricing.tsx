@@ -26,48 +26,76 @@ interface PricingProps {
 
 const pricingList: PricingProps[] = [
   {
-    title: "Free",
+    title: "Landing Page",
+    popular: 0,
+    price: 200000,
+    description:
+      "Perfecta para promocionar tu producto o servicio con diseño atractivo.",
+    buttonText: "Comenzar Proyecto",
+    benefitList: [
+      "Diseño responsivo moderno",
+      "Optimización SEO básica",
+      "Formulario de contacto",
+      "Hosting y dominio gratis 1 año",
+      "Certificado SSL incluido",
+    ],
+  },
+  {
+    title: "Página Web",
+    popular: 0,
+    price: 350000,
+    description:
+      "Sitio web corporativo completo con múltiples secciones.",
+    buttonText: "Ver Detalles",
+    benefitList: [
+      "Hasta 10 páginas",
+      "Blog integrado",
+      "Galería de imágenes",
+      "Formularios avanzados",
+      "Botón de WhatsApp",
+      "Hosting y dominio por 1 año",
+      "Optimización SEO básica",
+      "Soporte técnico 3 meses"
+    ],
+  },
+  {
+    title: "E-commerce",
+    popular: 1,
+    price: 400000,
+    description:
+      "Tienda online completa y gestion avanzada.",
+    buttonText: "Solicitar Cotización",
+    benefitList: [
+      "Catálogo de productos",
+      "Pasarelas de pago integradas",
+      "Carrito de compras",
+      "Panel de administración",
+      "Gestión de inventario",
+      "Botón de WhatsApp",
+      "Reportes de ventas",
+      "Hosting y dominio por 1 año",
+      "hasta 10 páginas",
+      "Capacitación incluida",
+      "Soporte técnico 6 meses",
+    ],
+  },
+  {
+    title: "Software a Medida",
     popular: 0,
     price: 0,
     description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Get Started",
+      "Desarrollo de aplicaciones web personalizadas para satisfacer las necesidades específicas de tu negocio.",
+    buttonText: "Consultar Proyecto",
     benefitList: [
-      "1 Team member",
-      "2 GB Storage",
-      "Upto 4 pages",
-      "Community support",
-      "lorem ipsum dolor",
-    ],
-  },
-  {
-    title: "Premium",
-    popular: 1,
-    price: 5,
-    description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Start Free Trial",
-    benefitList: [
-      "4 Team member",
-      "4 GB Storage",
-      "Upto 6 pages",
-      "Priority support",
-      "lorem ipsum dolor",
-    ],
-  },
-  {
-    title: "Enterprise",
-    popular: 0,
-    price: 40,
-    description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Contact US",
-    benefitList: [
-      "10 Team member",
-      "8 GB Storage",
-      "Upto 10 pages",
-      "Priority support",
-      "lorem ipsum dolor",
+      "Análisis de requerimientos",
+      "Desarrollo personalizado",
+      "Base de datos optimizada",
+      "Panel de administración",
+      "Integración con APIs",
+      "Hosting empresarial 1 año",
+      "Mantenimiento 3 meses gratis",
+      "Capacitación incluida",
+      "Soporte técnico 6 meses",
     ],
   },
 ];
@@ -79,18 +107,17 @@ export const Pricing = () => {
       className="container py-24 sm:py-32"
     >
       <h2 className="text-3xl md:text-4xl font-bold text-center">
-        Get
+        Planes y
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           {" "}
-          Unlimited{" "}
+          Servicios{" "}
         </span>
-        Access
+        Web
       </h2>
       <h3 className="text-xl text-center text-muted-foreground pt-4 pb-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-        reiciendis.
+        Desde landing pages hasta software personalizado. Encuentra la solución perfecta para tu proyecto digital.
       </h3>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
         {pricingList.map((pricing: PricingProps) => (
           <Card
             key={pricing.title}
@@ -108,13 +135,13 @@ export const Pricing = () => {
                     variant="secondary"
                     className="text-sm text-primary"
                   >
-                    Most popular
+                    Más Popular
                   </Badge>
                 ) : null}
               </CardTitle>
               <div>
-                <span className="text-3xl font-bold">${pricing.price}</span>
-                <span className="text-muted-foreground"> /month</span>
+                <span className="text-3xl font-bold">${pricing.price.toLocaleString()}</span>
+                <span className="text-muted-foreground"> COP</span>
               </div>
 
               <CardDescription>{pricing.description}</CardDescription>
