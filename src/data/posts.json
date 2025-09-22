@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "React 18: Nuevas Características y Beneficios",
+    "excerpt": "Descubre las últimas funcionalidades de React 18 incluyendo Concurrent Features, Automatic Batching y Suspense para mejorar la experiencia del usuario.",
+    "date": "2025-09-20",
+    "image": "/src/assets/react.svg",
+    "link": "/blog/react-18-nuevas-caracteristicas"
+  },
+  {
+    "id": 2,
+    "title": "TailwindCSS: El Framework CSS del Futuro",
+    "excerpt": "Aprende cómo TailwindCSS revoluciona el desarrollo frontend con su enfoque utility-first y acelera significativamente el proceso de desarrollo.",
+    "date": "2025-09-18",
+    "image": "/src/assets/growth.png",
+    "link": "/blog/tailwindcss-framework-futuro"
+  },
+  {
+    "id": 3,
+    "title": "TypeScript para Desarrolladores JavaScript",
+    "excerpt": "Migra de JavaScript a TypeScript sin dolor. Guía completa para entender los beneficios del tipado estático en proyectos web modernos.",
+    "date": "2025-09-15",
+    "image": "/src/assets/cube-leg.png",
+    "link": "/blog/typescript-para-javascript"
+  },
+  {
+    "id": 4,
+    "title": "Optimización de Rendimiento en React",
+    "excerpt": "Técnicas avanzadas para mejorar el rendimiento de tus aplicaciones React: memorización, lazy loading, code splitting y más.",
+    "date": "2025-09-12",
+    "image": "/src/assets/pilot.png",
+    "link": "/blog/optimizacion-rendimiento-react"
+  },
+  {
+    "id": 5,
+    "title": "Landing Pages que Convierten: Guía Completa",
+    "excerpt": "Estrategias probadas para crear landing pages con altas tasas de conversión. Desde el diseño UX/UI hasta la psicología del usuario.",
+    "date": "2025-09-10",
+    "image": "/src/assets/looking-ahead.png",
+    "link": "/blog/landing-pages-que-convierten"
+  },
+  {
+    "id": 6,
+    "title": "API REST vs GraphQL: ¿Cuál Elegir?",
+    "excerpt": "Comparativa detallada entre REST y GraphQL para ayudarte a decidir qué tecnología usar en tu próximo proyecto web.",
+    "date": "2025-09-08",
+    "image": "/src/assets/reflecting.png",
+    "link": "/blog/api-rest-vs-graphql"
+  }
+]

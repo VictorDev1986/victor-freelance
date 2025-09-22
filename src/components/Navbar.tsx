@@ -42,6 +42,10 @@ const routeList: RouteProps[] = [
     label: "Proyectos",
   },
   {
+    href: "/blog",
+    label: "Blog",
+  },
+  {
     href: "#pricing",
     label: "Precios",
   },
@@ -98,6 +102,16 @@ export const Navbar = () => {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+    }
+  };
+
+  const handleNavigation = (href: string) => {
+    if (href.startsWith('#')) {
+      // Es una sección, usar handleSectionNavigation
+      handleSectionNavigation(href.replace('#', ''));
+    } else {
+      // Es una ruta, navegar directamente
+      navigate(href);
     }
   };
 
@@ -200,7 +214,7 @@ export const Navbar = () => {
                     <button
                       key={label}
                       onClick={() => {
-                        handleSectionNavigation(href.replace('#', ''));
+                        handleNavigation(href);
                         setIsOpen(false);
                       }}
                       className={buttonVariants({ variant: "ghost" })}
@@ -275,7 +289,7 @@ export const Navbar = () => {
             {routeList.slice(1).map((route: RouteProps, i) => (
               <button
                 key={i + 1}
-                onClick={() => handleSectionNavigation(route.href.replace('#', ''))}
+                onClick={() => handleNavigation(route.href)}
                 className={`text-[17px] ${buttonVariants({
                   variant: "ghost",
                 })}`}

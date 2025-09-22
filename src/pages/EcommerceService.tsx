@@ -3,82 +3,14 @@ import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { GlobalBackground } from "@/components/GlobalBackground";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, ShoppingCart, CreditCard, BarChart3, Users, Shield, Headphones } from "lucide-react";
+import { motion } from "framer-motion";
+import { CheckCircle } from "lucide-react";
+import { Pricing } from "@/components/Pricing";
+import { FAQSection } from "@/components/FAQSection";
 
 export const EcommerceService = () => {
-  const features = [
-    {
-      icon: <ShoppingCart className="w-6 h-6" />,
-      title: "Catálogo Completo",
-      description: "Sistema completo de productos con categorías, filtros, búsqueda avanzada y gestión de inventario."
-    },
-    {
-      icon: <CreditCard className="w-6 h-6" />,
-      title: "Pagos Integrados",
-      description: "Pasarelas de pago seguras: tarjetas, transferencias, Nequi, Daviplata y más opciones."
-    },
-    {
-      icon: <BarChart3 className="w-6 h-6" />,
-      title: "Dashboard Completo",
-      description: "Panel administrativo con reportes de ventas, estadísticas y gestión completa del negocio."
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Gestión de Clientes",
-      description: "Base de datos de clientes, historial de compras, programas de fidelización y marketing."
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Seguridad Avanzada",
-      description: "Certificados SSL, encriptación de datos, protección contra fraudes y respaldos automáticos."
-    },
-    {
-      icon: <Headphones className="w-6 h-6" />,
-      title: "Soporte Extendido",
-      description: "6 meses de soporte técnico, capacitación completa y actualizaciones de seguridad."
-    }
-  ];
-
-  const includes = [
-    "Catálogo de productos ilimitados",
-    "Pasarelas de pago integradas",
-    "Panel de administración completo",
-    "Gestión de inventario avanzada",
-    "Botón de WhatsApp integrado",
-    "Reportes de ventas detallados",
-    "Hosting y dominio por 1 año",
-    "Hasta 10 páginas adicionales",
-    "Capacitación completa incluida",
-    "Soporte técnico 6 meses",
-    "Certificado SSL premium",
-    "Optimización SEO avanzada"
-  ];
-
-  const process = [
-    {
-      step: "1",
-      title: "Análisis del Negocio",
-      description: "Estudiamos tu modelo de negocio, productos y objetivos comerciales específicos."
-    },
-    {
-      step: "2", 
-      title: "Diseño de la Tienda",
-      description: "Creamos el diseño visual y la experiencia de usuario optimizada para ventas online."
-    },
-    {
-      step: "3",
-      title: "Desarrollo E-commerce", 
-      description: "Desarrollamos la tienda con todas las funcionalidades y integraciones necesarias."
-    },
-    {
-      step: "4",
-      title: "Testing y Lanzamiento",
-      description: "Realizamos pruebas exhaustivas y lanzamos tu tienda online con capacitación completa."
-    }
-  ];
-
   return (
     <div className="relative min-h-screen bg-background">
       <GlobalBackground />
@@ -87,10 +19,10 @@ export const EcommerceService = () => {
         <Navbar />
         
         {/* Hero Section */}
-        <section className="container py-24 sm:py-32">
+        <section className="container py-16 sm:py-20 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">
             <Badge variant="outline" className="mb-4">
-              ⭐ Más Popular
+              🛒 E-commerce Completo
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Tiendas Online que
@@ -102,180 +34,157 @@ export const EcommerceService = () => {
               E-commerce completo con carrito de compras, pasarelas de pago integradas y panel 
               administrativo profesional. Tu negocio online funcionando las 24 horas.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button size="lg" className="text-lg px-8 py-6">
                 Solicitar Cotización
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
                 Ver Demo
               </Button>
             </div>
-          </div>
-        </section>
-
-        {/* Precio */}
-        <section className="container py-16">
-          <div className="max-w-md mx-auto">
-            <Card className="border-primary/20 shadow-lg relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-primary text-primary-foreground">Más Popular</Badge>
-              </div>
-              <CardHeader className="text-center pt-8">
-                <CardTitle className="text-2xl">E-commerce Profesional</CardTitle>
-                <div className="text-4xl font-bold text-primary mt-4">
-                  $1.800.000
-                  <span className="text-lg font-normal text-muted-foreground"> COP</span>
-                </div>
-                <CardDescription>
-                  Tienda online completa y funcional
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {includes.map((item, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button className="w-full mt-6" size="lg">
-                  Empezar Mi Tienda
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Características */}
-        <section className="container py-24 bg-muted/30">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              E-commerce Completo y
-              <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-                {" "}Profesional{" "}
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span className="flex items-center gap-1">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                Pagos integrados
               </span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Todo lo que necesitas para vender online con éxito. Desde el catálogo hasta los reportes de ventas.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
-                    {feature.icon}
-                  </div>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Proceso */}
-        <section className="container py-24">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Proceso de
-              <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-                {" "}Desarrollo{" "}
+              <span className="flex items-center gap-1">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                Panel administrativo
               </span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Desarrollo profesional en 8 días con metodología probada y resultados garantizados.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Beneficios Adicionales */}
-        <section className="container py-24 bg-muted/30">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Beneficios
-              <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-                {" "}Adicionales{" "}
+              <span className="flex items-center gap-1">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                Soporte 6 meses
               </span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl text-center">📱 App Móvil Ready</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  Tu tienda se verá perfecta en móviles, donde ocurre el 70% de las compras online.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl text-center">📊 Analytics Incluidos</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  Google Analytics configurado para rastrear ventas, conversiones y comportamiento.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-xl text-center">🚀 SEO Optimizado</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  Configuración SEO avanzada para que tus productos aparezcan en Google.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* CTA Final */}
-        <section className="container py-24">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              ¿Listo para Vender
-              <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-                {" "}Online?{" "}
-              </span>
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Comienza a vender las 24 horas del día con una tienda online profesional. 
-              Tu e-commerce estará listo en solo 8 días.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
-                Comenzar Mi Tienda
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
-                Agendar Consulta
-              </Button>
             </div>
           </div>
         </section>
 
+        {/* Why E-commerce Section */}
+        <section className="container py-8 sm:py-12 lg:py-16">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            {/* Image Side */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="relative w-full h-full"
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+                className="relative w-full h-full"
+              >
+                <img
+                  src="/src/assets/project1.png"
+                  alt="E-commerce Profesional"
+                  className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-contain drop-shadow-2xl"
+                />
+                <div className="absolute top-4 left-4">
+                  <Badge className="bg-green-500 hover:bg-green-600">
+                    🛒 Ventas 24/7
+                  </Badge>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Content Side */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  ¿Por qué necesitas una{" "}
+                  <span className="bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text">
+                    Tienda Online profesional?
+                  </span>
+                </h2>
+                <div className="space-y-4 text-lg text-muted-foreground">
+                  <p>
+                    Una tienda online es tu vendedor más eficiente trabajando 24/7. No se cansa, 
+                    no pide vacaciones y siempre está listo para procesar pedidos y generar ventas, 
+                    incluso mientras duermes.
+                  </p>
+                  
+                  <p>
+                    <span className="font-semibold text-foreground">Ventas automáticas:</span> Tu tienda 
+                    procesa pedidos automáticamente, acepta pagos y envía confirmaciones sin intervención manual.
+                  </p>
+                  
+                  <p>
+                    <span className="font-semibold text-foreground">Alcance ilimitado:</span> Vende a cualquier 
+                    persona en cualquier lugar del país. Tu mercado se expande más allá de tu ubicación física.
+                  </p>
+                  
+                  <p>
+                    <span className="font-semibold text-foreground">Gestión centralizada:</span> Panel administrativo 
+                    que te permite controlar inventario, ventas, clientes y reportes desde un solo lugar.
+                  </p>
+                  
+                  <p>
+                    <span className="font-semibold text-foreground">Escalabilidad garantizada:</span> Desde 10 hasta 
+                    10,000 productos, tu tienda crece contigo sin limitaciones técnicas.
+                  </p>
+                </div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: true }}
+                className="pt-4"
+              >
+                <Button size="lg" className="text-lg px-8 py-6">
+                  Quiero mi E-commerce
+                </Button>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="container py-8 sm:py-12 lg:py-16">
+          <Card className="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border-primary/20">
+            <CardContent className="text-center py-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                ¿Listo para Vender Online?
+              </h2>
+              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Transforma tu negocio con una tienda online profesional. Desde $1.800.000 COP 
+                incluye todo lo necesario para empezar a vender hoy mismo.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <Button size="lg" className="text-lg px-8 py-6">
+                  Consulta Gratuita
+                </Button>
+                <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+                  Ver Demo
+                </Button>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6 mt-8 text-sm">
+                <div className="text-center">
+                  <h3 className="font-semibold mb-2">💰 Precio</h3>
+                  <p className="text-muted-foreground">$1.800.000 COP</p>
+                </div>
+                <div className="text-center">
+                  <h3 className="font-semibold mb-2">⏱️ Entrega</h3>
+                  <p className="text-muted-foreground">15-20 días hábiles</p>
+                </div>
+                <div className="text-center">
+                  <h3 className="font-semibold mb-2">🛡️ Soporte</h3>
+                  <p className="text-muted-foreground">6 meses incluidos</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+  <Pricing />
+      <FAQSection />
         <Footer />
         <ScrollToTop />
       </div>

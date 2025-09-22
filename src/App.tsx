@@ -6,6 +6,7 @@ import LandingPageService from "./pages/LandingPageService";
 import EcommerceService from "./pages/EcommerceService";
 import PaginaWebService from "./pages/PaginaWebService";
 import SoftwareMedidaService from "./pages/SoftwareMedidaService";
+import BlogPage from "./pages/BlogPage";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <div className="relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/blog" element={<BlogPage />} />
             <Route path="/servicios/landing-page" element={<LandingPageService />} />
             <Route path="/servicios/ecommerce" element={<EcommerceService />} />
             <Route path="/servicios/pagina-web" element={<PaginaWebService />} />
