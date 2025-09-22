@@ -5,7 +5,7 @@ import { GlobalBackground } from "@/components/GlobalBackground";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Code, Database, Cog, Users, Shield, Zap, Cloud, BarChart } from "lucide-react";
+import { Check, Code, Database, Cog, Users, Cloud, BarChart } from "lucide-react";
 
 export const SoftwareMedidaService = () => {
   const features = [
