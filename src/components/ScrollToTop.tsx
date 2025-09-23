@@ -19,7 +19,7 @@ export const ScrollToTop = () => {
   }, []);
 
   const goToTop = () => {
-    smoothScrollTo(0, { duration: 650 });
+    smoothScrollTo(0, { duration: 1100 });
   };
 
   return (

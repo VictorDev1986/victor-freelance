@@ -77,7 +77,7 @@ export const TechSlider = () => {
                 transition={{ type: "spring", stiffness: 240, damping: 18 }}
               >
                 <tech.icon
-                  className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-2 transition-colors duration-300 ${tech.color}`}
+                  className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-3 transition-colors duration-300 ${tech.color}`}
                 />
                 <span className="text-[10px] sm:text-xs md:text-sm font-medium text-foreground/70 dark:text-foreground/60 text-center">
                   {tech.name}

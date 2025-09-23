@@ -133,8 +133,8 @@ export const Navbar = () => {
       // Nota: si algún contenido queda oculto detrás del navbar, asegurarse de añadir pt-14 al primer contenedor principal
     >
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container h-14 px-4 flex items-center justify-between gap-4">
-          <NavigationMenuItem className="font-bold flex items-center">
+        <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
+          <NavigationMenuItem className="font-bold flex">
             <Link
               to="/"
               className="ml-2 font-bold text-2xl flex tracking-tight"
@@ -175,10 +175,7 @@ export const Navbar = () => {
                 </Menu>
               </SheetTrigger>
 
-              <SheetContent 
-                side={"left"}
-                className="pt-10 pr-10 [&>button>svg]:h-8 [&>button>svg]:w-8 [&>button]:right-5 [&>button]:top-5"
-              >
+              <SheetContent side={"left"}>
                 <SheetHeader>
                   <SheetTitle className="font-bold text-2xl tracking-tight">
                     Victor Sánchez
@@ -258,7 +255,7 @@ export const Navbar = () => {
           </span>
 
           {/* desktop */}
-          <nav className="hidden md:flex gap-2 items-center">
+          <nav className="hidden md:flex gap-2">
             {routeList.slice(0, 1).map((route: RouteProps, i) => (
               <button
                 key={i}
@@ -317,7 +314,7 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex gap-2 items-center">
+          <div className="hidden md:flex gap-2">
             <a
               rel="noreferrer noopener"
               href="https://github.com/VictorDev1986"

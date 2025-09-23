@@ -161,20 +161,21 @@ const ProjectCard = ({
             </div>
           </div>
         </div>
-        <Button
-          asChild
-          className="w-full rounded-none rounded-b-lg px-4 py-3 sm:py-3.5 font-medium tracking-wide"
-          data-whatsapp-ignore
-        >
-          <a
-            href={project.demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver Proyecto
-          </a>
-        </Button>
       </div>
+      <Button
+        asChild
+        className="w-full mt-3 px-4 py-3 sm:py-3.5 font-medium tracking-wide"
+        data-whatsapp-ignore
+      >
+        <a
+          href={project.demoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Ver proyecto ${project.title}`}
+        >
+          Ver Proyecto
+        </a>
+      </Button>
     </motion.div>
   );
 };
