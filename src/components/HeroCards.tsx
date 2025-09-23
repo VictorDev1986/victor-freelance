@@ -16,7 +16,8 @@ import fotoPerfil from "@/assets/foto_perfil.jpg";
 
 export const HeroCards = () => {
   return (
-    <div className="hidden lg:flex flex-row flex-wrap gap-8 relative w-[700px] h-[500px]">
+    /* Ajuste responsive: en lugar de ancho fijo, se limita con max-w y se previene overflow horizontal */
+    <div className="hidden lg:flex flex-row flex-wrap gap-8 relative w-full max-w-[700px] h-[500px]">
       {/* Testimonial */}
       
 
@@ -26,6 +27,7 @@ export const HeroCards = () => {
           <img
             src={fotoPerfil}
             alt="Victor Sánchez"
+            loading="lazy"
             className="absolute grayscale-[0%] -top-12 rounded-full w-24 h-24 aspect-square object-cover"
           />
           <CardTitle className="text-center">Victor Sánchez</CardTitle>
@@ -46,6 +48,7 @@ export const HeroCards = () => {
               rel="noreferrer noopener"
               href="https://github.com/VictorDev1986"
               target="_blank"
+              aria-label="Perfil de GitHub de Victor"
               className={buttonVariants({
                 variant: "ghost",
                 size: "sm",
@@ -59,6 +62,7 @@ export const HeroCards = () => {
               rel="noreferrer noopener"
               href="https://www.linkedin.com/in/victorsanchez1986/"
               target="_blank"
+              aria-label="Perfil de LinkedIn de Victor"
               className={buttonVariants({
                 variant: "ghost",
                 size: "sm",

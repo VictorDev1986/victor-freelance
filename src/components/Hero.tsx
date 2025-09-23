@@ -1,9 +1,9 @@
-import { Button } from "./ui/button";
-import { buttonVariants } from "./ui/button";
+import { memo } from "react";
+import { Button, buttonVariants } from "./ui/button";
 import { HeroCards } from "./HeroCards";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
-export const Hero = () => {
+const HeroComponent = () => {
   return (
     <section className="container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10">
       <div className="text-center lg:text-start space-y-6">
@@ -23,7 +23,8 @@ export const Hero = () => {
           </h2>
         </main>
 
-        <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
+        {/* section-lead reutilizada para consistencia tipográfica */}
+        <p className="section-lead md:w-10/12 mx-auto lg:mx-0">
           Desarrollo soluciones web modernas y aplicaciones escalables con las 
           mejores tecnologías para hacer crecer tu negocio.
         </p>
@@ -55,3 +56,6 @@ export const Hero = () => {
     </section>
   );
 };
+
+// Memo: componente sin props; evita rerender al cambiar estado global no relacionado
+export const Hero = memo(HeroComponent);

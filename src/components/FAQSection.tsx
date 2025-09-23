@@ -85,16 +85,17 @@ export const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="container py-24 sm:py-32">
+  <section id="faq" className="container py-24 sm:py-32 section-x-padding">
       {/* Header de la sección */}
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        {/* Refactor: reemplazo clases repetidas por section-title y heading-gradient */}
+        <h2 className="section-title mb-4">
           Preguntas
-          <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+          <span className="heading-gradient">
             {" "}Frecuentes{" "}
           </span>
         </h2>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        <p className="section-lead max-w-2xl mx-auto">
           Resuelve tus dudas sobre el proceso de desarrollo web freelance. 
           Si no encuentras la respuesta que buscas, ¡contáctame directamente!
         </p>

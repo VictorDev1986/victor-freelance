@@ -53,14 +53,13 @@ export const HowItWorks = () => {
       id="services"
       className="container text-center py-24 sm:py-32"
     >
-      <h2 className="text-3xl md:text-4xl font-bold ">
+      {/* Refactor: uso de utilidades section-title y heading-gradient para consistencia */}
+      <h2 className="section-title">
         Mis{" "}
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          Servicios{" "}
-        </span>
+        <span className="heading-gradient">Servicios{" "}</span>
         Profesionales
       </h2>
-      <p className="md:w-3/4 mx-auto mt-4 mb-8 text-xl text-muted-foreground">
+      <p className="md:w-3/4 mx-auto mt-4 mb-8 section-lead">
         Soluciones tecnológicas completas para empresas, PyMES y emprendedores 
         que buscan digitalizar y hacer crecer su negocio.
       </p>

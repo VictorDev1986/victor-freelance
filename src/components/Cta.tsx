@@ -1,6 +1,7 @@
+import { memo } from "react";
 import { Button } from "./ui/button";
 
-export const Cta = () => {
+const CtaComponent = () => {
   return (
     <section
       id="cta"
@@ -8,9 +9,10 @@ export const Cta = () => {
     >
       <div className="container lg:grid lg:grid-cols-2 place-items-center">
         <div className="lg:col-start-1">
-          <h2 className="text-3xl md:text-4xl font-bold ">
+          {/* Refactor: uso de section-title y heading-gradient */}
+          <h2 className="section-title ">
             ¡Oferta Especial!
-            <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+            <span className="heading-gradient">
               {" "}
               Tiendas en Línea{" "}
             </span>
@@ -36,3 +38,5 @@ export const Cta = () => {
     </section>
   );
 };
+
+export const Cta = memo(CtaComponent);

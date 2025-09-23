@@ -126,11 +126,15 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header className={`sticky border-b-[1px] top-0 z-40 w-full transition-all duration-500 ${
-      isScrolled 
-        ? 'bg-white/30 dark:bg-background/30 backdrop-blur-xl border-b-transparent shadow-lg' 
-        : 'bg-white dark:bg-background dark:border-b-slate-700 shadow-none'
-    }`}>
+    // Navbar fijo (fixed) con fondo totalmente transparente al inicio y blur + translucidez al hacer scroll
+    <header
+      className={`fixed top-0 left-0 h-14 w-full z-40 transition-all duration-500 ${
+        isScrolled
+          ? 'backdrop-blur-xl bg-white/30 dark:bg-background/30 border-b border-border/40 shadow-lg'
+          : 'bg-transparent border-b border-transparent'
+      }`}
+      // Nota: si algún contenido queda oculto detrás del navbar, asegurarse de añadir pt-14 al primer contenedor principal
+    >
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">

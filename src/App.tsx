@@ -12,7 +12,8 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <div className="relative min-h-screen bg-background">
+  {/* overflow-x-hidden previene scroll horizontal causado por elementos absolutos expansivos */}
+  <div className="relative min-h-screen bg-background overflow-x-hidden">
         <GlobalBackground />
         
         {/* Contenido principal */}

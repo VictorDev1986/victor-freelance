@@ -78,7 +78,8 @@ export const EcommerceService = () => {
                 <img
                   src="/src/assets/project1.png"
                   alt="E-commerce Profesional"
-                  className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-contain drop-shadow-2xl"
+                  loading="lazy"
+                  className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-contain max-w-full drop-shadow-2xl"
                 />
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-green-500 hover:bg-green-600">

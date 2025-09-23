@@ -104,7 +104,7 @@ export const DevelopmentRoadmap = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8">
+  <section className="py-16 sm:py-20 section-x-padding">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -114,11 +114,8 @@ export const DevelopmentRoadmap = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-              Roadmap de{" "}
-            </span>
-            Desarrollo
+          <h2 className="section-title mb-6">
+            <span className="heading-gradient">Roadmap de </span>Desarrollo
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Proceso completo desde la planificación hasta el lanzamiento de tu proyecto web
@@ -190,7 +187,8 @@ export const DevelopmentRoadmap = () => {
                       <img
                         src={phase.image}
                         alt={phase.title}
-                        className="w-full h-48 lg:h-64 object-contain transition-transform duration-500 group-hover:scale-110 mx-auto"
+                        loading="lazy"
+                        className="w-full h-48 lg:h-64 object-contain max-w-full transition-transform duration-500 group-hover:scale-110 mx-auto"
                       />
                       
                       {/* Badge de estado */}

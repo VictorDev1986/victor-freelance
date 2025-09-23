@@ -11,15 +11,18 @@ export const About = () => {
       >
         <div className="bg-muted/50 border rounded-lg py-12">
           <div className="px-6 flex flex-col-reverse md:flex-row gap-8 md:gap-12">
+            {/* Imagen optimizada: se agrega loading="lazy" y se asegura adaptación sin overflow */}
             <img
               src={fotoPerfil}
               alt="Victor Sánchez - Ingeniero de Sistemas"
-              className="w-[300px] h-[300px] object-cover rounded-full mx-auto md:mx-0"
+              loading="lazy"
+              className="w-[240px] sm:w-[260px] md:w-[300px] aspect-square object-cover rounded-full mx-auto md:mx-0 max-w-full"
             />
             <div className="bg-green-0 flex flex-col justify-between">
               <div className="pb-6">
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+                {/* Uso de utilidades reutilizables para consistencia visual */}
+                <h2 className="section-title">
+                  <span className="heading-gradient">
                     Acerca de{" "}
                   </span>
                   Victor

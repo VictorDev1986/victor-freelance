@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import project1 from "../assets/project1.png";
@@ -141,7 +142,8 @@ const ProjectCard = ({
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-auto object-contain transition-all duration-700 group-hover:scale-105"
+          loading="lazy"
+          className="w-full h-auto object-contain max-w-full transition-all duration-700 group-hover:scale-105"
         />
         
         {/* Degradado permanente en la parte inferior para efecto profesional */}
@@ -168,7 +170,7 @@ const ProjectCard = ({
   );
 };
 
-const PortfolioSection = () => {
+const PortfolioSectionComponent = () => {
   const getBadgeColor = (index: number) => {
     if (index === 0) return "bg-white/20";
     if (index === 1) return "bg-blue-500/20";
@@ -184,7 +186,7 @@ const PortfolioSection = () => {
   };
 
   return (
-    <section id="projects" className="container py-16 sm:py-20">
+  <section id="projects" className="container py-16 sm:py-20 section-x-padding">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
@@ -200,10 +202,10 @@ const PortfolioSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Mi <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">Portafolio</span>
+          <h2 className="section-title">
+            Mi <span className="heading-gradient">Portafolio</span>
           </h2>
-          <p className="md:w-3/4 mx-auto mt-4 mb-8 text-xl text-muted-foreground">
+          <p className="md:w-3/4 mx-auto mt-4 mb-8 section-lead">
             Cada proyecto cuenta una historia de innovación. Descubre cómo transformo ideas en 
             experiencias digitales excepcionales que impulsan el crecimiento empresarial.
           </p>
@@ -251,4 +253,4 @@ const PortfolioSection = () => {
   );
 };
 
-export default PortfolioSection;
+export default memo(PortfolioSectionComponent);

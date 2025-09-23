@@ -2,6 +2,42 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Aseguramos directivas Tailwind para que @layer components funcione correctamente */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== Utilidades personalizadas agregadas ========== */
+/* Estas clases encapsulan patrones repetidos detectados mediante auditoría.
+   Beneficios: menor duplicación, mantenimiento centralizado y consistencia visual. */
+@layer components {
+  /* Gradiente recurrente para palabras resaltadas en títulos */
+  .heading-gradient {
+    @apply bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text;
+  }
+
+  /* Estilo base de títulos de sección (h2) repetido en múltiples componentes */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
+  /* Párrafo destacado de introducción bajo títulos */
+  .section-lead {
+    @apply text-xl text-muted-foreground;
+  }
+
+  /* Contenedor común para secciones verticales grandes */
+  .section-y-padding {
+    @apply py-24 sm:py-32;
+  }
+
+  /* Padding horizontal consistente reutilizable para secciones */
+  .section-x-padding {
+    /* px base en móvil, incrementa en sm y md manteniendo diseño fluido */
+    @apply px-4 sm:px-6 md:px-8;
+  }
+}
+
 /* HeroCards background shadow */
 .shadow {
   position: absolute;

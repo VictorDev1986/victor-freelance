@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -100,21 +101,21 @@ const pricingList: PricingProps[] = [
   },
 ];
 
-export const Pricing = () => {
+const PricingComponent = () => {
   return (
     <section
       id="pricing"
       className="container py-24 sm:py-32"
     >
-      <h2 className="text-3xl md:text-4xl font-bold text-center">
+      <h2 className="section-title text-center">
         Planes y
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+        <span className="heading-gradient">
           {" "}
           Servicios{" "}
         </span>
         Web
       </h2>
-      <h3 className="text-xl text-center text-muted-foreground pt-4 pb-8">
+      <h3 className="section-lead text-center pt-4 pb-8">
         Desde landing pages hasta software personalizado. Encuentra la solución perfecta para tu proyecto digital.
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
@@ -172,3 +173,5 @@ export const Pricing = () => {
     </section>
   );
 };
+
+export const Pricing = memo(PricingComponent);
