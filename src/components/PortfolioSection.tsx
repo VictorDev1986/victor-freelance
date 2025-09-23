@@ -1,6 +1,5 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 import project1 from "../assets/project1.png";
 
 // Tipo de datos para cada proyecto
@@ -224,30 +223,6 @@ const PortfolioSectionComponent = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center mt-8"
-        >
-          <div className="bg-muted/50 border rounded-lg p-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              ¿Tienes un proyecto en mente?
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Colaboremos para crear algo extraordinario. Desde la idea inicial hasta el lanzamiento, 
-              te acompaño en cada paso del proceso.
-            </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-lg text-lg font-medium inline-flex items-center gap-2 transition-all">
-                Hablemos de tu proyecto
-                <ArrowUpRight className="w-5 h-5" />
-              </button>
-            </motion.div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

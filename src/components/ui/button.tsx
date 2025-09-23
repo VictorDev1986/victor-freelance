@@ -37,15 +37,54 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  /** Mensaje dinámico para enviar en WhatsApp. Si se omite, se abre el chat sin texto prellenado */
+  whatsappMessage?: string
+  /** Número alternativo (solo dígitos). Por defecto usa el global configurado */
+  whatsappNumber?: string
 }
 
+// Número de WhatsApp usado para redirección global
+const WHATSAPP_NUMBER = "573013829208" // sin el signo + para el formato wa.me
+
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({
+    className,
+    variant,
+    size,
+    asChild = false,
+    onClick,
+    whatsappMessage,
+    whatsappNumber,
+    ...props
+  }, ref) => {
     const Comp = asChild ? Slot : "button"
+
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+      // Ejecuta cualquier lógica original primero
+      if (onClick) {
+        onClick(e)
+      }
+      // Si el componente pidió explícitamente ignorar el redirect, salir
+      // Uso: <Button data-whatsapp-ignore />
+      const target = e.currentTarget as HTMLElement & { dataset?: DOMStringMap }
+      if (target?.dataset?.whatsappIgnore !== undefined) return
+      // Si el evento fue prevenido por la lógica original, no continuar
+      if (e.defaultPrevented) return
+      // Construir URL dinámica con mensaje (si se proporcionó)
+      const number = (whatsappNumber || WHATSAPP_NUMBER).replace(/[^0-9]/g, "")
+      let url = `https://wa.me/${number}`
+      const trimmed = whatsappMessage?.trim()
+      if (trimmed) {
+        url += `?text=${encodeURIComponent(trimmed)}`
+      }
+      window.open(url, '_blank', 'noopener,noreferrer')
+    }
+
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        onClick={handleClick}
         {...props}
       />
     )

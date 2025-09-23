@@ -68,7 +68,7 @@ export const HowItWorks = () => {
         {features.map(({ icon, title, description }: FeatureProps) => (
           <Card
             key={title}
-            className="bg-muted/50 hover:bg-muted/70 transition-colors duration-300"
+            className="bg-card border-none drop-shadow-xl shadow-black/10 dark:shadow-white/10 hover:bg-card/90 transition-colors duration-300"
           >
             <CardHeader>
               <CardTitle className="grid gap-4 place-items-center text-center">

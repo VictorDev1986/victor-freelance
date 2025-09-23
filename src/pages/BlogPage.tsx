@@ -6,7 +6,7 @@ import BlogSection from "@/components/BlogSection";
 
 export const BlogPage = () => {
   return (
-    <div className="relative min-h-screen bg-background">
+    <div className="container pt-28 pb-20 md:pt-40 md:pb-28">
       <GlobalBackground />
       
       <div className="relative z-10">

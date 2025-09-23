@@ -22,7 +22,7 @@ export const HeroCards = () => {
       
 
       {/* Team */}
-      <Card className="absolute right-[20px] top-4 w-80 flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+  <Card className="absolute right-[20px] top-4 w-80 flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-none">
         <CardHeader className="mt-8 flex justify-center items-center pb-2">
           <img
             src={fotoPerfil}
@@ -76,7 +76,7 @@ export const HeroCards = () => {
       </Card>
 
       {/* E-commerce */}
-      <Card className="absolute top-[150px] left-[50px] w-72  drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+  <Card className="absolute top-[150px] left-[50px] w-72 drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-none">
         <CardHeader>
           <CardTitle className="flex item-center justify-between">
             E-commerce
@@ -117,7 +117,7 @@ export const HeroCards = () => {
       </Card>
 
       {/* IA Solutions */}
-      <Card className="absolute w-[350px] -right-[10px] bottom-[35px]  drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+  <Card className="absolute w-[350px] -right-[10px] bottom-[35px] drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-none">
         <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
           <div className="mt-1 bg-primary/20 p-1 rounded-2xl">
             <LightBulbIcon />

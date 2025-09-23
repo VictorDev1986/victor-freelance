@@ -19,7 +19,7 @@ export const SoftwareMedidaService = () => {
         <Navbar />
         
         {/* Hero Section */}
-        <section className="container py-16 sm:py-20 lg:py-24">
+        <section className="container pt-28 pb-20 md:pt-40 md:pb-28">
           <div className="text-center max-w-4xl mx-auto">
             <Badge variant="outline" className="mb-4">
               ⚙️ Solución Personalizada

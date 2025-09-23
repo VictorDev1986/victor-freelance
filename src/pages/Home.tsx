@@ -9,6 +9,7 @@ import { Navbar } from "../components/Navbar";
 import PortfolioSection from "../components/PortfolioSection";
 import { Pricing } from "../components/Pricing";
 
+
 export default function Home() {
   return (
     <>

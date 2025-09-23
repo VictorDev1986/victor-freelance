@@ -122,11 +122,7 @@ const PricingComponent = () => {
         {pricingList.map((pricing: PricingProps) => (
           <Card
             key={pricing.title}
-            className={
-              pricing.popular === PopularPlanType.YES
-                ? "drop-shadow-xl shadow-black/10 dark:shadow-white/10"
-                : ""
-            }
+            className="bg-card border-none drop-shadow-xl shadow-black/10 dark:shadow-white/10"
           >
             <CardHeader>
               <CardTitle className="flex item-center justify-between">
