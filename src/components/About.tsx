@@ -1,6 +1,6 @@
 import { Statistics } from "./Statistics";
 import { TechSlider } from "./TechSlider";
-import fotoPerfil from "../assets/foto_perfil.jpg";
+import fotoPerfil from "../assets/foto_profesional.png";
 
 export const About = () => {
   return (

@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
 import { GlobalBackground } from "./components/GlobalBackground";
 import { ScrollToTop } from "./components/ScrollToTop";
-import Home from "./pages/Home.tsx";
-import LandingPageService from "./pages/LandingPageService";
-import EcommerceService from "./pages/EcommerceService";
-import PaginaWebService from "./pages/PaginaWebService";
-import SoftwareMedidaService from "./pages/SoftwareMedidaService";
-import BlogPage from "./pages/BlogPage";
+// Carga diferida de páginas para reducir bundle inicial
+const Home = lazy(() => import('./pages/Home'));
+const LandingPageService = lazy(() => import('./pages/LandingPageService'));
+const EcommerceService = lazy(() => import('./pages/EcommerceService'));
+const PaginaWebService = lazy(() => import('./pages/PaginaWebService'));
+const SoftwareMedidaService = lazy(() => import('./pages/SoftwareMedidaService'));
+const BlogPage = lazy(() => import('./pages/BlogPage'));
 import "./App.css";
 
 function App() {
@@ -18,14 +20,16 @@ function App() {
         
         {/* Contenido principal */}
         <div className="relative z-10">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/servicios/landing-page" element={<LandingPageService />} />
-            <Route path="/servicios/ecommerce" element={<EcommerceService />} />
-            <Route path="/servicios/pagina-web" element={<PaginaWebService />} />
-            <Route path="/servicios/software-medida" element={<SoftwareMedidaService />} />
-          </Routes>
+          <Suspense fallback={<div className="w-full py-20 text-center text-sm text-muted-foreground animate-pulse">Cargando...</div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/servicios/landing-page" element={<LandingPageService />} />
+              <Route path="/servicios/ecommerce" element={<EcommerceService />} />
+              <Route path="/servicios/pagina-web" element={<PaginaWebService />} />
+              <Route path="/servicios/software-medida" element={<SoftwareMedidaService />} />
+            </Routes>
+          </Suspense>
           <ScrollToTop />
         </div>
       </div>

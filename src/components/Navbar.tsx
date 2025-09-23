@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { smoothScrollIntoView, scrollToIdWhenReady, smoothScrollTo } from "@/lib/smoothScroll";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -42,17 +43,18 @@ const routeList: RouteProps[] = [
     label: "Proyectos",
   },
   {
-    href: "/blog",
-    label: "Blog",
-  },
-  {
     href: "#pricing",
     label: "Precios",
+  },
+   {
+    href: "/blog",
+    label: "Blog",
   },
   {
     href: "#contact",
     label: "Contacto",
   },
+
 ];
 
 const servicesList: ServiceProps[] = [
@@ -76,6 +78,7 @@ const servicesList: ServiceProps[] = [
     label: "Software a Medida",
     description: "Aplicaciones web personalizadas"
   },
+  
 ];
 
 export const Navbar = () => {
@@ -85,22 +88,16 @@ export const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const NAVBAR_OFFSET = 70; // compensar altura aproximada del navbar
   const handleSectionNavigation = (sectionId: string) => {
     if (location.pathname !== '/') {
-      // Si no estamos en la página principal, navegar allí primero
       navigate('/');
-      // Usar setTimeout para asegurar que la página se haya cargado
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+      // Esperar a que el DOM de Home esté listo y hacer scroll suave
+      scrollToIdWhenReady(sectionId, 40, 50, { offset: NAVBAR_OFFSET, duration: 650 });
     } else {
-      // Si ya estamos en la página principal, hacer scroll directo
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        smoothScrollIntoView(element, { offset: NAVBAR_OFFSET, duration: 650 });
       }
     }
   };
@@ -136,14 +133,28 @@ export const Navbar = () => {
       // Nota: si algún contenido queda oculto detrás del navbar, asegurarse de añadir pt-14 al primer contenedor principal
     >
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
-          <NavigationMenuItem className="font-bold flex">
+        <NavigationMenuList className="container h-14 px-4 flex items-center justify-between gap-4">
+          <NavigationMenuItem className="font-bold flex items-center">
             <Link
               to="/"
-              className="ml-2 font-bold text-xl flex"
+              className="ml-2 font-bold text-2xl flex tracking-tight"
+              onClick={(e) => {
+                e.preventDefault();
+                // Cerrar sheet móvil si está abierto
+                if (isOpen) setIsOpen(false);
+                if (location.pathname !== '/') {
+                  navigate('/');
+                  // Asegurar que tras montar Home se haga scroll suave al top
+                  setTimeout(() => smoothScrollTo(0, { duration: 650 }), 50);
+                } else {
+                  smoothScrollTo(0, { duration: 650 });
+                }
+              }}
+              aria-label="Ir al inicio"
             >
               <Braces className="mr-2 w-6 h-6" />
-              Victor Sanchez
+              <span>Victor</span>
+              <span className="text-green-500 ml-2">Sánchez</span>
             </Link>
           </NavigationMenuItem>
 
@@ -164,9 +175,12 @@ export const Navbar = () => {
                 </Menu>
               </SheetTrigger>
 
-              <SheetContent side={"left"}>
+              <SheetContent 
+                side={"left"}
+                className="pt-10 pr-10 [&>button>svg]:h-8 [&>button>svg]:w-8 [&>button]:right-5 [&>button]:top-5"
+              >
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">
+                  <SheetTitle className="font-bold text-2xl tracking-tight">
                     Victor Sánchez
                   </SheetTitle>
                 </SheetHeader>
@@ -178,7 +192,7 @@ export const Navbar = () => {
                         handleSectionNavigation(href.replace('#', ''));
                         setIsOpen(false);
                       }}
-                      className={buttonVariants({ variant: "ghost" })}
+                      className={`${buttonVariants({ variant: "ghost" })} text-xl font-semibold`}
                     >
                       {label}
                     </button>
@@ -188,7 +202,7 @@ export const Navbar = () => {
                   <div className="w-full">
                     <button
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                      className={`${buttonVariants({ variant: "ghost" })} w-full flex items-center justify-center gap-2`}
+                      className={`${buttonVariants({ variant: "ghost" })} w-full flex items-center justify-center gap-2 text-xl font-semibold`}
                     >
                       Servicios
                       <ChevronDown className={`h-4 w-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
@@ -204,10 +218,10 @@ export const Navbar = () => {
                               setIsOpen(false);
                               setMobileServicesOpen(false);
                             }}
-                            className="block w-full text-left p-3 rounded-md hover:bg-accent transition-colors"
+                            className="block w-full text-left p-3 rounded-md hover:bg-accent transition-colors text-base"
                           >
-                            <div className="text-sm font-medium">{label}</div>
-                            <div className="text-xs text-muted-foreground mt-1">{description}</div>
+                            <div className="text-base font-medium leading-snug">{label}</div>
+                            <div className="text-xs text-muted-foreground mt-1 leading-relaxed">{description}</div>
                           </Link>
                         ))}
                       </div>
@@ -221,7 +235,7 @@ export const Navbar = () => {
                         handleNavigation(href);
                         setIsOpen(false);
                       }}
-                      className={buttonVariants({ variant: "ghost" })}
+                      className={`${buttonVariants({ variant: "ghost" })} text-xl font-semibold`}
                     >
                       {label}
                     </button>
@@ -244,14 +258,14 @@ export const Navbar = () => {
           </span>
 
           {/* desktop */}
-          <nav className="hidden md:flex gap-2">
+          <nav className="hidden md:flex gap-2 items-center">
             {routeList.slice(0, 1).map((route: RouteProps, i) => (
               <button
                 key={i}
                 onClick={() => handleSectionNavigation(route.href.replace('#', ''))}
-                className={`text-[17px] ${buttonVariants({
+                className={`text-lg ${buttonVariants({
                   variant: "ghost",
-                })}`}
+                })} font-medium`}
               >
                 {route.label}
               </button>
@@ -261,9 +275,9 @@ export const Navbar = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`text-[17px] ${buttonVariants({
+                  <NavigationMenuTrigger className={`text-lg ${buttonVariants({
                     variant: "ghost",
-                  })}`}>
+                  })} font-medium`}>
                     Servicios
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -294,16 +308,16 @@ export const Navbar = () => {
               <button
                 key={i + 1}
                 onClick={() => handleNavigation(route.href)}
-                className={`text-[17px] ${buttonVariants({
+                className={`text-lg ${buttonVariants({
                   variant: "ghost",
-                })}`}
+                })} font-medium`}
               >
                 {route.label}
               </button>
             ))}
           </nav>
 
-          <div className="hidden md:flex gap-2">
+          <div className="hidden md:flex gap-2 items-center">
             <a
               rel="noreferrer noopener"
               href="https://github.com/VictorDev1986"

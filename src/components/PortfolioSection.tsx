@@ -1,6 +1,8 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
-import project1 from "../assets/project1.png";
+import { Button } from "./ui/button";
+import project1 from "../assets/project1.jpg";
+import project2 from "../assets/project2.jpg";
 
 // Tipo de datos para cada proyecto
 interface Project {
@@ -32,7 +34,7 @@ const projects: Project[] = [
     id: 2,
     title: "SaaS Dashboard",
     description: "Panel de control moderno para aplicaciones SaaS con métricas en tiempo real",
-    image: project1,
+    image: project2,
     demoUrl: "https://demo-dashboard.com",
     githubUrl: "https://github.com/victor/saas-dashboard",
     technologies: ["Next.js", "TypeScript", "PostgreSQL"],
@@ -126,46 +128,54 @@ const ProjectCard = ({
   };
 
   return (
-    <motion.a
-      href={project.demoUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: getAnimationDelay() }}
-      className="group relative block cursor-pointer"
+      className="group relative block"
       whileHover={{ scale: 1.02 }}
     >
-      <div className={`relative rounded-lg overflow-hidden ${bgColor} drop-shadow-xl shadow-black/10 dark:shadow-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm border border-white/10`}>
-        <img
-          src={project.image}
-          alt={project.title}
-          loading="lazy"
-          className="w-full h-auto object-contain max-w-full transition-all duration-700 group-hover:scale-105"
-        />
-        
-        {/* Degradado permanente en la parte inferior para efecto profesional */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-t from-black/60 via-black/30 to-transparent sm:from-black/80 sm:via-black/40 pointer-events-none"></div>
-        
-        {/* Overlay que aparece en hover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-        
-        {/* Badge de categoría */}
-        <CategoryBadge category={project.category} color={badgeColor} />
+      <div className={`rounded-lg overflow-hidden drop-shadow-xl shadow-black/10 dark:shadow-white/10 border border-white/10 backdrop-blur-sm ${bgColor}`}>
+        <div className="relative">
+          <img
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+            className="w-full h-auto object-contain max-w-full transition-all duration-700 group-hover:scale-105"
+          />
 
-        {/* Content que aparece en hover */}
-        <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 z-10">
-          <div className="transform translate-y-4 sm:translate-y-6 group-hover:translate-y-0 transition-all duration-500 delay-100">
-            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-4 sm:mb-5">
-              {project.title}
-            </h3>
-            
-            <TechStack technologies={project.technologies} />
+          {/* Overlay que aparece en hover */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+          {/* Badge de categoría */}
+          <CategoryBadge category={project.category} color={badgeColor} />
+
+          {/* Content que aparece en hover */}
+          <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 z-10">
+            <div className="transform translate-y-4 sm:translate-y-6 group-hover:translate-y-0 transition-all duration-500 delay-100">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-4 sm:mb-5">
+                {project.title}
+              </h3>
+              <TechStack technologies={project.technologies} />
+            </div>
           </div>
         </div>
+        <Button
+          asChild
+          className="w-full rounded-none rounded-b-lg px-4 py-3 sm:py-3.5 font-medium tracking-wide"
+          data-whatsapp-ignore
+        >
+          <a
+            href={project.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver Proyecto
+          </a>
+        </Button>
       </div>
-    </motion.a>
+    </motion.div>
   );
 };
 

@@ -1,25 +1,25 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
+import { smoothScrollTo } from "@/lib/smoothScroll";
 import { ArrowUpToLine } from "lucide-react";
 
 export const ScrollToTop = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       if (window.scrollY > 400) {
         setShowTopBtn(true);
       } else {
         setShowTopBtn(false);
       }
-    });
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const goToTop = () => {
-    window.scroll({
-      top: 0,
-      left: 0,
-    });
+    smoothScrollTo(0, { duration: 650 });
   };
 
   return (

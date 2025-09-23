@@ -10,4 +10,21 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom", "react-router-dom"],
+        },
+        // División adicional automática por carpeta de páginas
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        chunkFileNames: (chunkInfo: any) => {
+          if (chunkInfo.facadeModuleId?.includes('/pages/')) {
+            return 'assets/pages/[name]-[hash].js';
+          }
+          return 'assets/[name]-[hash].js';
+        },
+      },
+    },
+  },
 });

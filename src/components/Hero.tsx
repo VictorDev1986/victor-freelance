@@ -8,15 +8,14 @@ const HeroComponent = () => {
     <section
       className="
         container grid lg:grid-cols-2 place-items-center
-        pt-28 pb-20 md:pt-40 md:pb-28 gap-10"
+        pt-40 pb-20 md:pt-40 md:pb-28 gap-10"
     >
       <div className="text-center lg:text-start space-y-6">
         <main className="text-5xl md:text-6xl font-bold">
           <h1 className="inline">
             <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
-              Victor Sánchez
+               Desarrollador
             </span>{" "}
-            Desarrollador
           </h1>{" "}
           de{" "}
           <h2 className="inline">
@@ -35,7 +34,7 @@ const HeroComponent = () => {
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
           <Button
-            className="w-full md:w-1/3 cursor-pointer"
+            className="w-full md:w-1/3"
             whatsappMessage="Hola Victor, vi tu portafolio y quiero contratar tus servicios de desarrollo de software. ¿Podemos hablar?"
           >
             Contratar Servicios
