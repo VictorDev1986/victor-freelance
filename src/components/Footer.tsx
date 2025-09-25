@@ -1,4 +1,4 @@
-import { LogoIcon } from "./Icons";
+import Logo from "../assets/Logo.png";
 
 export const Footer = () => {
   return (
@@ -10,10 +10,15 @@ export const Footer = () => {
           <a
             rel="noreferrer noopener"
             href="/"
-            className="font-bold text-xl flex"
+            className="font-bold text-xl flex items-center"
           >
-            <LogoIcon />
-            Victor Sánchez
+            <img
+              src={Logo}
+              alt="Logo Victor Sánchez"
+              className="mr-2 w-20 h-20 object-contain"
+              style={{ display: 'inline-block' }}
+            />
+            Victor <span className="text-green-500 ml-2">Sánchez</span>
           </a>
         </div>
 

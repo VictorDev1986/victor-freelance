@@ -19,7 +19,8 @@ import {
 
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "./ui/button";
-import { Menu, Braces, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
+import Logo from "../assets/Logo.png";
 import { ModeToggle } from "./mode-toggle";
 
 interface RouteProps {
@@ -137,7 +138,7 @@ export const Navbar = () => {
           <NavigationMenuItem className="font-bold flex">
             <Link
               to="/"
-              className="ml-2 font-bold text-2xl flex tracking-tight"
+              className="ml-2 font-bold text-2xl flex items-center tracking-tight"
               onClick={(e) => {
                 e.preventDefault();
                 // Cerrar sheet móvil si está abierto
@@ -152,7 +153,12 @@ export const Navbar = () => {
               }}
               aria-label="Ir al inicio"
             >
-              <Braces className="mr-2 w-6 h-6" />
+              <img
+                src={Logo}
+                alt="Logo Victor Sánchez"
+                className="mr-2 w-12 h-12 object-contain"
+                style={{ display: 'inline-block' }}
+              />
               <span>Victor</span>
               <span className="text-green-500 ml-2">Sánchez</span>
             </Link>
@@ -177,11 +183,16 @@ export const Navbar = () => {
 
               <SheetContent side={"left"}>
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-2xl tracking-tight">
-                    Victor Sánchez
-                  </SheetTitle>
+                  <div className="flex justify-center items-center w-full py-2">
+                    <img
+                      src={Logo}
+                      alt="Logo Victor Sánchez"
+                      className="w-16 h-16 object-contain"
+                      style={{ display: 'inline-block' }}
+                    />
+                  </div>
                 </SheetHeader>
-                <nav className="flex flex-col justify-center items-center gap-2 mt-4">
+                <nav className="flex flex-col justify-center items-center gap-2 mt-4 text-2xl">
                   {routeList.slice(0, 1).map(({ href, label }: RouteProps) => (
                     <button
                       key={label}
@@ -189,7 +200,7 @@ export const Navbar = () => {
                         handleSectionNavigation(href.replace('#', ''));
                         setIsOpen(false);
                       }}
-                      className={`${buttonVariants({ variant: "ghost" })} text-xl font-semibold`}
+                      className={`${buttonVariants({ variant: "ghost" })} text-2xl font-semibold`}
                     >
                       {label}
                     </button>
@@ -199,7 +210,7 @@ export const Navbar = () => {
                   <div className="w-full">
                     <button
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                      className={`${buttonVariants({ variant: "ghost" })} w-full flex items-center justify-center gap-2 text-xl font-semibold`}
+                      className={`${buttonVariants({ variant: "ghost" })} w-full flex items-center justify-center gap-2 text-2xl font-semibold`}
                     >
                       Servicios
                       <ChevronDown className={`h-4 w-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
@@ -232,7 +243,7 @@ export const Navbar = () => {
                         handleNavigation(href);
                         setIsOpen(false);
                       }}
-                      className={`${buttonVariants({ variant: "ghost" })} text-xl font-semibold`}
+                      className={`${buttonVariants({ variant: "ghost" })} text-2xl font-semibold`}
                     >
                       {label}
                     </button>
