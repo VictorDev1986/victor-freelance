@@ -11,7 +11,6 @@ import soport from "../assets/undraw_deep-work_muov.svg";
 interface RoadmapPhase {
   id: number;
   title: string;
-  dateRange: string;
   description: string;
   image: string;
   status: "completed" | "in-progress" | "upcoming";
@@ -21,7 +20,6 @@ const roadmapData: RoadmapPhase[] = [
   {
     id: 1,
     title: "Planificación y Análisis",
-    dateRange: "Semana 1-2",
     description: "Definición de objetivos, análisis de requerimientos y planificación del proyecto completo.",
     image: buildingWebsiteImg,
     status: "completed"
@@ -29,7 +27,6 @@ const roadmapData: RoadmapPhase[] = [
   {
     id: 2,
     title: "Diseño UI/UX",
-    dateRange: "Semana 3-4",
     description: "Creación de mockups, prototipos y definición de la experiencia de usuario.",
     image: designerImg,
     status: "completed"
@@ -37,7 +34,6 @@ const roadmapData: RoadmapPhase[] = [
   {
     id: 3,
     title: "Desarrollo Frontend",
-    dateRange: "Semana 5-8",
     description: "Implementación de la interfaz de usuario usando tecnologías modernas como React y TypeScript.",
     image: dragAndDropImg,
     status: "in-progress"
@@ -45,7 +41,6 @@ const roadmapData: RoadmapPhase[] = [
   {
     id: 4,
     title: "Desarrollo Backend",
-    dateRange: "Semana 6-9",
     description: "Desarrollo de APIs, configuración de base de datos y lógica del servidor.",
     image: backend,
     status: "upcoming"
@@ -53,7 +48,6 @@ const roadmapData: RoadmapPhase[] = [
   {
     id: 5,
     title: "Testing y QA",
-    dateRange: "Semana 10-11",
     description: "Pruebas exhaustivas, corrección de bugs y optimización del rendimiento.",
     image: developerActivityImg,
     status: "upcoming"
@@ -61,7 +55,6 @@ const roadmapData: RoadmapPhase[] = [
   {
     id: 6,
     title: "Despliegue",
-    dateRange: "Semana 12",
     description: "Configuración del servidor, despliegue en producción y configuración de dominios.",
     image: prodcutionImg,
     status: "upcoming"
@@ -69,7 +62,6 @@ const roadmapData: RoadmapPhase[] = [
   {
     id: 7,
     title: "Mantenimiento",
-    dateRange: "Continuo",
     description: "Soporte técnico, actualizaciones de seguridad y mejoras continuas del sistema.",
     image: soport,
     status: "upcoming"
@@ -164,11 +156,17 @@ export const DevelopmentRoadmap = () => {
                       {/* Header de la fase */}
                       <div className="flex items-start gap-4 mb-4">
                         <div className="flex-1">
-                          <div className="flex items-center gap-3 mb-2">
-                            <Calendar className="w-4 h-4 text-primary" />
-                            <span className="text-sm font-medium text-primary">{phase.dateRange}</span>
-                          </div>
-                          <h3 className="text-xl font-bold text-foreground mb-2">{phase.title}</h3>
+                          {/* Eliminado dateRange */}
+                          <h3 className="text-xl font-bold text-foreground mb-2">
+                            {(() => {
+                              const words = phase.title.split(' ');
+                              if (words.length < 2) return phase.title;
+                              return <>
+                                {words.slice(0, -1).join(' ')}{' '}
+                                <span className="text-green-500">{words[words.length - 1]}</span>
+                              </>;
+                            })()}
+                          </h3>
                           <p className="text-muted-foreground">{phase.description}</p>
                         </div>
                       </div>
