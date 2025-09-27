@@ -9,6 +9,7 @@ const EcommerceService = lazy(() => import('./pages/EcommerceService'));
 const PaginaWebService = lazy(() => import('./pages/PaginaWebService'));
 const SoftwareMedidaService = lazy(() => import('./pages/SoftwareMedidaService'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
+const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 import "./App.css";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:id" element={<BlogDetail />} />
               <Route path="/servicios/landing-page" element={<LandingPageService />} />
               <Route path="/servicios/ecommerce" element={<EcommerceService />} />
               <Route path="/servicios/pagina-web" element={<PaginaWebService />} />

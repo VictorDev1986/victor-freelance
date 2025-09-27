@@ -6,7 +6,7 @@ import BlogSection from "@/components/BlogSection";
 
 export const BlogPage = () => {
   return (
-    <div className="container pt-28 pb-20 md:pt-40 md:pb-28">
+    <div className="container pt-28 pb-20 md:pt-40 md:pb-28 bg-transparent">
       <GlobalBackground />
       
       <div className="relative z-10">

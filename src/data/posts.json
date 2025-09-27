@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "React 18: Nuevas Características y Beneficios",
+    "title": "React 19: Nuevas Características y Beneficios",
     "excerpt": "Descubre las últimas funcionalidades de React 18 incluyendo Concurrent Features, Automatic Batching y Suspense para mejorar la experiencia del usuario.",
     "date": "2025-09-20",
     "image": "/src/assets/react.svg",
@@ -47,4 +47,6 @@
     "image": "/src/assets/reflecting.png",
     "link": "/blog/api-rest-vs-graphql"
   }
+   
+
 ]
