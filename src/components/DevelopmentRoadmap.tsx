@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, CheckCircle, Circle, Play } from "lucide-react";
+import { CheckCircle, Circle, Play } from "lucide-react";
 import buildingWebsiteImg from "../assets/undraw_building-a-website_1wrp.svg";
 import designerImg from "../assets/undraw_designer_efwz.svg";
 import backend from "../assets/undraw_version-control_e4yu.svg";
