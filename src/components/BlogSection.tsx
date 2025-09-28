@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Calendar, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
@@ -181,16 +180,13 @@ export const BlogSection = () => {
 
                   {/* Botón Leer Más */}
                   <div className="pt-4">
-                    <Button
-                      variant="ghost"
-                      className="group/btn p-0 h-auto font-semibold text-primary hover:text-primary/80 transition-colors duration-300"
-                      onClick={() => window.location.href = `/blog/${post.id}`}
+                    <Link
+                      to={`/blog/${post.id}`}
+                      className="group/btn p-0 h-auto font-semibold text-primary hover:text-primary/80 transition-colors duration-300 inline-flex items-center gap-2"
                     >
-                      <span className="flex items-center gap-2">
-                        Leer más
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                      </span>
-                    </Button>
+                      Leer más
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                    </Link>
                   </div>
                 </CardContent>
               </Card>

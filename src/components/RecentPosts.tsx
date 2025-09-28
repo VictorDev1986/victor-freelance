@@ -20,7 +20,7 @@ const RecentPosts = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch("/src/data/posts.json");
+        const response = await fetch("/data/posts.json");
         const data: BlogPost[] = await response.json();
         // Ordenar por fecha descendente y tomar los 3 más recientes
         const sorted = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
