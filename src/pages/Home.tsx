@@ -1,3 +1,4 @@
+import RecentPosts from "@/components/RecentPosts";
 import { About } from "../components/About";
 import { Cta } from "../components/Cta";
 import { DevelopmentRoadmap } from "../components/DevelopmentRoadmap";
@@ -21,6 +22,7 @@ export default function Home() {
       <PortfolioSection />
       <Cta />
       <Pricing />
+      <RecentPosts />
       <FAQSection />
       <Footer />
     </>
