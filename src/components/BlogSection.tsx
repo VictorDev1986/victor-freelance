@@ -24,7 +24,7 @@ export const BlogSection = () => {
   useEffect(() => {
     const loadPosts = async () => {
       try {
-        const response = await fetch('/src/data/posts.json');
+  const response = await fetch('/data/posts.json');
         const data = await response.json();
         setPosts(data);
       } catch (error) {
