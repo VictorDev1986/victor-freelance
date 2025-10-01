@@ -1,6 +1,8 @@
 # 🧩 Portafolio / Landing Freelance – Victor Sánchez
 
-Proyecto de landing page y portafolio profesional desarrollado con **React + TypeScript + TailwindCSS**, enfocado en presentar servicios de desarrollo web, software a medida y soluciones digitales modernas. Incluye secciones de héroe, servicios, roadmap, portafolio, precios, FAQ y blog.
+🔗 **Ver proyecto en vivo:** [https://victorsanchezt.com/](https://victorsanchezt.com/)
+
+Proyecto de Sitio web de portafolio profesional desarrollado con **React + TypeScript + TailwindCSS**, enfocado en presentar servicios de desarrollo web, software a medida y soluciones digitales modernas. Incluye secciones de quien soy , servicios, roadmap, portafolio, precios, FAQ y blog.
 
 ---
 ## 📌 Tabla de Contenidos
