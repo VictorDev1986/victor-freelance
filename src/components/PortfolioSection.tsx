@@ -1,8 +1,11 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import project1 from "../assets/project1.jpg";
-import project2 from "../assets/project2.jpg";
+import project1 from "../assets/project1.png";
+import project2 from "../assets/project2.png";
+import project3 from "../assets/project3.png";
+import project4 from "../assets/project4.png";
+import project5 from "../assets/project5.png";
 
 // Tipo de datos para cada proyecto
 interface Project {
@@ -21,77 +24,57 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-commerce Platform",
+    title: "Carosublimados",
     description: "Plataforma completa de comercio electrónico con pagos integrados y gestión avanzada",
     image: project1,
-    demoUrl: "https://demo-ecommerce.com",
-    githubUrl: "https://github.com/victor/ecommerce",
-    technologies: ["React", "Node.js", "Stripe", "MongoDB"],
+    demoUrl: "https://carosublimados.shop/",
+    githubUrl: "https://carosublimados.shop/",
+    technologies: ["Wordpress", "WooCommerce", "php", "MySQL"],
     category: "E-commerce",
     featured: true
   },
   {
     id: 2,
-    title: "SaaS Dashboard",
+    title: "MovieFlix",
     description: "Panel de control moderno para aplicaciones SaaS con métricas en tiempo real",
     image: project2,
-    demoUrl: "https://demo-dashboard.com",
-    githubUrl: "https://github.com/victor/saas-dashboard",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL"],
+    demoUrl: "https://moviefl.netlify.app/",
+    githubUrl: "https://github.com/VictorDev1986/MovieFlix.git",
+    technologies: ["React", "TypeScript", "Tailwind","Axios"],
     category: "SaaS",
     featured: true
   },
   {
     id: 3,
-    title: "Corporate Website",
+    title: "Mi podcast",
     description: "Sitio web corporativo con diseño elegante y optimización SEO",
-    image: project1,
-    demoUrl: "https://demo-corporate.com",
+    image: project3,
+    demoUrl: "https://mi-podcast.vercel.app/",
+    githubUrl: "https://github.com/VictorDev1986/Mi-Podcast.git",
     technologies: ["React", "Tailwind", "Framer Motion"],
     category: "Corporate"
   },
-  {
+  {   
     id: 4,
-    title: "Mobile App Design",
+    title: "https://cmtechcol.online/",
     description: "Diseño UI/UX para aplicación móvil de fitness y wellness",
-    image: project1,
-    demoUrl: "https://demo-mobile.com",
-    technologies: ["Figma", "React Native", "Expo"],
+    image: project4,
+    demoUrl: "https://cmtechcol.online/",
+    technologies: ["Wordpress", "woocommerce", "php", "MySQL"],
     category: "Mobile"
   },
   {
     id: 5,
-    title: "Blog Platform",
+    title: "Pet Vet",
     description: "Plataforma de blog moderna con CMS headless y editor avanzado",
-    image: project1,
-    demoUrl: "https://demo-blog.com",
-    githubUrl: "https://github.com/victor/blog-platform",
-    technologies: ["Next.js", "Sanity", "Vercel"],
+    image: project5,
+    demoUrl: "https://victordev1986.github.io/pet-vet/",
+    githubUrl: "https://github.com/VictorDev1986/Pet-Vet.git",
+    technologies: ["html", "tailwind",],
     category: "Blog"
   },
-  {
-    id: 6,
-    title: "Portfolio Website",
-    description: "Portfolio personal con animaciones interactivas y diseño único",
-    image: project1,
-    demoUrl: "https://demo-portfolio.com",
-    technologies: ["React", "Three.js", "GSAP"],
-    category: "Portfolio"
-  }
-];
 
-// Componente para el badge de categoría
-const CategoryBadge = ({ category, color }: { 
-  category: string; 
-  color: string; 
-}) => (
-  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 lg:top-6 lg:left-6 z-10">
-    <span className={`inline-flex items-center gap-1 sm:gap-2 ${color} backdrop-blur-md text-white px-2 py-1 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-full text-xs sm:text-sm font-medium`}>
-      <span className={`w-1.5 h-1.5 sm:w-2 sm:h-2 ${color.includes('green') ? 'bg-green-400' : color.includes('blue') ? 'bg-blue-400' : 'bg-purple-400'} rounded-full`}></span>
-      {category}
-    </span>
-  </div>
-);
+];
 
 // Componente para las tecnologías
 const TechStack = ({ technologies }: { 
@@ -114,14 +97,10 @@ const TechStack = ({ technologies }: {
 // Componente principal de tarjeta de proyecto
 const ProjectCard = ({ 
   project, 
-  index, 
-  bgColor = "bg-gradient-to-br from-gray-800 to-gray-900",
-  badgeColor = "bg-white/20"
+  index
 }: { 
   project: Project; 
   index: number; 
-  bgColor?: string;
-  badgeColor?: string;
 }) => {
   const getAnimationDelay = () => {
     return 0.1 + index * 0.1;
@@ -136,7 +115,7 @@ const ProjectCard = ({
       className="group relative block"
       whileHover={{ scale: 1.02 }}
     >
-      <div className={`rounded-lg overflow-hidden drop-shadow-xl shadow-black/10 dark:shadow-white/10 border border-white/10 backdrop-blur-sm ${bgColor}`}>
+      <div className="rounded-lg overflow-hidden drop-shadow-xl shadow-black/10 border border-gray-200 bg-white">
         <div className="relative">
           <img
             src={project.image}
@@ -147,9 +126,6 @@ const ProjectCard = ({
 
           {/* Overlay que aparece en hover */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-
-          {/* Badge de categoría */}
-          <CategoryBadge category={project.category} color={badgeColor} />
 
           {/* Content que aparece en hover */}
           <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 z-10">
@@ -181,20 +157,6 @@ const ProjectCard = ({
 };
 
 const PortfolioSectionComponent = () => {
-  const getBadgeColor = (index: number) => {
-    if (index === 0) return "bg-white/20";
-    if (index === 1) return "bg-blue-500/20";
-    if (index === 2) return "bg-purple-500/20";
-    return "bg-white/20";
-  };
-
-  const getBgColor = (index: number) => {
-    if (index === 0) return "bg-white dark:bg-gray-900";
-    if (index === 1) return "bg-gradient-to-br from-blue-900 to-purple-900";
-    if (index === 2) return "bg-gradient-to-br from-purple-900 to-pink-900";
-    return "bg-gradient-to-br from-gray-800 to-gray-900";
-  };
-
   return (
   <section id="projects" className="container py-16 sm:py-20 section-x-padding">
       {/* Background Elements */}
@@ -228,8 +190,6 @@ const PortfolioSectionComponent = () => {
               key={project.id}
               project={project}
               index={index}
-              bgColor={getBgColor(index)}
-              badgeColor={getBadgeColor(index)}
             />
           ))}
         </div>

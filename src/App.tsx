@@ -4,6 +4,7 @@ import LogoLoader from './components/LogoLoader';
 import PageLoader from './components/PageLoader';
 import { GlobalBackground } from "./components/GlobalBackground";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { ChatBot } from "./components/ChatBot";
 // Carga diferida de páginas para reducir bundle inicial
 const Home = lazy(() => import('./pages/Home'));
 const LandingPageService = lazy(() => import('./pages/LandingPageService'));
@@ -37,6 +38,7 @@ function App() {
             </Routes>
           </Suspense>
           <ScrollToTop />
+          <ChatBot />
         </div>
       </div>
     </Router>

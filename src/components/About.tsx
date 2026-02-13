@@ -1,6 +1,6 @@
 import { Statistics } from "./Statistics";
 import { TechSlider } from "./TechSlider";
-import fotoPerfil from "../assets/foto_profesional.png";
+import fotoPerfil from "../assets/foto_perfil.png";
 
 export const About = () => {
   return (
@@ -10,7 +10,7 @@ export const About = () => {
         className="container py-20 sm:py-24 md:py-32"
       >
   {/* Fondo actualizado a bg-card para igualar el estilo visual de las Cards */}
-  <div className="bg-card rounded-lg py-12 drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+  <div className="bg-card rounded-lg py-12 drop-shadow-xl shadow-black/10">
           <div className="px-6 flex flex-col-reverse md:flex-row gap-8 md:gap-12">
             {/* Imagen optimizada: se agrega loading="lazy" y se asegura adaptación sin overflow */}
             <img

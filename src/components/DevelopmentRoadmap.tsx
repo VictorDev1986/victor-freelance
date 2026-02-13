@@ -107,7 +107,7 @@ export const DevelopmentRoadmap = () => {
           className="text-center mb-16"
         >
           <h2 className="section-title mb-6">
-            <span className="heading-gradient">Roadmap de </span>Desarrollo
+            <span className="heading-gradient">Proceso de </span>Desarrollo
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Proceso completo desde la planificación hasta el lanzamiento de tu proyecto web

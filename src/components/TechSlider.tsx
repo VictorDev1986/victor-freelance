@@ -45,7 +45,7 @@ const technologies: TechItem[] = [
   { name: "Git", icon: SiGit, color: "text-orange-600" },
   { name: "Docker", icon: SiDocker, color: "text-sky-500" },
   { name: "AWS", icon: SiAmazon, color: "text-amber-500" },
-  { name: "Vercel", icon: SiVercel, color: "text-white dark:text-white" },
+  { name: "Vercel", icon: SiVercel, color: "text-white" },
   { name: "WordPress", icon: SiWordpress, color: "text-sky-600" },
   { name: "Linux", icon: SiLinux, color: "text-yellow-500" },
   { name: "Figma", icon: SiFigma, color: "text-pink-500" },
@@ -79,7 +79,7 @@ export const TechSlider = () => {
                 <tech.icon
                   className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-3 transition-colors duration-300 ${tech.color}`}
                 />
-                <span className="text-[10px] sm:text-xs md:text-sm font-medium text-foreground/70 dark:text-foreground/60 text-center">
+                <span className="text-[10px] sm:text-xs md:text-sm font-medium text-foreground/70 text-center">
                   {tech.name}
                 </span>
               </motion.div>

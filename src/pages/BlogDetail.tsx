@@ -64,7 +64,7 @@ const BlogDetail = () => {
         <div className="text-muted-foreground mb-6">{post.date}</div>
         {/* Mostrar excerpt si no hay content, o content con formato si existe */}
         {post.content ? (
-          <div className="prose prose-neutral dark:prose-invert font-sans text-lg leading-relaxed mb-8 max-w-none">
+          <div className="prose prose-neutral font-sans text-lg leading-relaxed mb-8 max-w-none">
             <ReactMarkdown>{post.content}</ReactMarkdown>
           </div>
         ) : (

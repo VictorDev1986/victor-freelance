@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -10,7 +9,13 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "1.5rem",
+      padding: {
+        DEFAULT: "1.5rem",  // 24px en móvil (mantiene actual)
+        md: "3rem",         // 48px en tablet/desktop (768px+)
+        lg: "4rem",         // 64px en desktop grande (1024px+)
+        xl: "5rem",         // 80px en desktop XL (1280px+)
+        "2xl": "6rem",      // 96px en pantallas muy grandes (1536px+)
+      },
       screens: {
         "2xl": "1400px",
       },

@@ -20,7 +20,6 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "./ui/button";
 import { Menu, ChevronDown } from "lucide-react";
 import Logo from "../assets/Logo.png";
-import { ModeToggle } from "./mode-toggle";
 
 interface RouteProps {
   href: string;
@@ -127,7 +126,7 @@ export const Navbar = () => {
     <header
       className={`fixed top-0 left-0 h-14 w-full z-40 transition-all duration-500 ${
         isScrolled
-          ? 'backdrop-blur-xl bg-white/30 dark:bg-background/30 border-b border-border/40 shadow-lg'
+          ? 'backdrop-blur-xl bg-white/30 border-b border-border/40 shadow-lg'
           : 'bg-transparent border-b border-transparent'
       }`}
       // Nota: si algún contenido queda oculto detrás del navbar, asegurarse de añadir pt-14 al primer contenedor principal
@@ -165,8 +164,6 @@ export const Navbar = () => {
 
           {/* mobile */}
           <span className="flex md:hidden">
-            <ModeToggle />
-
             <Sheet
               open={isOpen}
               onOpenChange={setIsOpen}
@@ -334,8 +331,6 @@ export const Navbar = () => {
               <GitHubLogoIcon className="mr-2 w-5 h-5" />
               Github
             </a>
-
-            <ModeToggle />
           </div>
         </NavigationMenuList>
       </NavigationMenu>

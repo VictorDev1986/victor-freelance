@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,7 +28,7 @@ const pricingList: PricingProps[] = [
   {
     title: "Landing Page",
     popular: 0,
-    price: 200000,
+    price: 400000,
     description:
       "Perfecta para promocionar tu producto o servicio con diseño atractivo.",
     buttonText: "Comenzar Proyecto",
@@ -44,7 +43,7 @@ const pricingList: PricingProps[] = [
   {
     title: "Página Web",
     popular: 0,
-    price: 350000,
+    price: 650000,
     description:
       "Sitio web corporativo completo con múltiples secciones.",
     buttonText: "Ver Detalles",
@@ -62,7 +61,7 @@ const pricingList: PricingProps[] = [
   {
     title: "E-commerce",
     popular: 1,
-    price: 400000,
+    price: 900000,
     description:
       "Tienda online completa y gestion avanzada.",
     buttonText: "Solicitar Cotización",
@@ -101,7 +100,12 @@ const pricingList: PricingProps[] = [
   },
 ];
 
-const PricingComponent = () => {
+export const Pricing = () => {
+  const formatPrice = (price: number): string => {
+    if (price === 0) return "Cotizar";
+    return `$${price.toLocaleString('es-CO')}`;
+  };
+
   return (
     <section
       id="pricing"
@@ -122,7 +126,7 @@ const PricingComponent = () => {
         {pricingList.map((pricing: PricingProps) => (
           <Card
             key={pricing.title}
-            className="bg-card border-none drop-shadow-xl shadow-black/10 dark:shadow-white/10"
+            className="bg-card border-none drop-shadow-xl shadow-black/10"
           >
             <CardHeader>
               <CardTitle className="flex item-center justify-between">
@@ -136,9 +140,18 @@ const PricingComponent = () => {
                   </Badge>
                 ) : null}
               </CardTitle>
-              <div>
-                <span className="text-3xl font-bold">${pricing.price.toLocaleString()}</span>
-                <span className="text-muted-foreground"> COP</span>
+              <div className="flex flex-col gap-1">
+                <div>
+                  <span className="text-3xl font-bold">{formatPrice(pricing.price)}</span>
+                  {pricing.price > 0 && (
+                    <span className="text-muted-foreground"> COP</span>
+                  )}
+                </div>
+                {pricing.price > 0 && (
+                  <div className="text-lg text-muted-foreground">
+                    ${(pricing.price / 4000).toFixed(2)} USD
+                  </div>
+                )}
               </div>
 
               <CardDescription>{pricing.description}</CardDescription>
@@ -169,5 +182,3 @@ const PricingComponent = () => {
     </section>
   );
 };
-
-export const Pricing = memo(PricingComponent);

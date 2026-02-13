@@ -8,7 +8,8 @@ import { Hero } from "../components/Hero";
 import { HowItWorks } from "../components/HowItWorks";
 import { Navbar } from "../components/Navbar";
 import PortfolioSection from "../components/PortfolioSection";
-import { Pricing } from "../components/Pricing";
+import { Pricing } from "@/components/Pricing";
+
 
 
 export default function Home() {
@@ -21,8 +22,8 @@ export default function Home() {
       <DevelopmentRoadmap />
       <PortfolioSection />
       <Cta />
-      <Pricing />
       <RecentPosts />
+      <Pricing />
       <FAQSection />
       <Footer />
     </>
